@@ -1,0 +1,53 @@
+一、传入参数
+1、参数1：巡检区参数,是一个一维数组
+alarm_area_para=[ri_id,fct_id,ri_zone_id,leftupX,leftupY,rightdownX,rightdownY]
+巡检ID，因素编号，报警去编号，光电编号，部门编号，左上X，左上Y，右下X，右下Y
+2、参数2：抽油机参数，是一个二维数组
+pumps_para = [[pump_id,pump_type,leftupX,leftupY,rightdownX,rightdownY],
+	     [pump_id,pump_type,leftupX,leftupY,rightdownX,rightdownY],
+	     [pump_id,pump_type,leftupX,leftupY,rightdownX,rightdownY],
+	     [		……                                          ]]
+3、参数3：视频流路径，是字符串
+rt_stream_path = 'rtsp:127.0.0.1/stream2'
+
+
+
+二、开放类和方法：
+class ai_rt_stream_detection(logger_name):
+	eg：logger_name = '1010_1_F001'
+	#切换巡检区
+	def change_alarm_zone(alarm_area_para,pumps_para,rt_stream_path):
+
+三、计算结果输出
+1. 增加巡检处理记录
+更新库：ldata_ispection_process_record，ldata_zone_curresult
+
+def update_area_status(alarms,logger_name)
+所需参数：
+1.alarms[[ri_id,zcr_zone_id,alarms_type,object_counts],		  [ri_id,zcr_zone_id,alarms_type,object_counts].....]  
+2.logger的名字，是字符串
+eg：1010_1_F001
+alarms_type = 'person' or 'car'
+
+2.更新抽油机状态记录
+更新库：ldata_pumpunit_status
+
+def update_pumps_curresult(pumps,logger_name)
+所需参数:
+1.pumps[[ri_id,zcr_zone_id,pump_id,pump_status],[ri_id,zcr_zone_id,pump_id,pump_status]......]
+2.logger的名字，是字符串
+eg：1010_1_F001
+
+
+
+
+
+
+
+
+
+
+
+
+
+

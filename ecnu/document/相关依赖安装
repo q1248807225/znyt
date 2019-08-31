@@ -1,0 +1,17 @@
+mysql 安装
+第一步：apt-get install libmysqlclient-dev
+第二步：pip install MySQL-python==1.2.5
+
+依赖库
+
+pip install opencv_contrib-python
+
+pip install imutils
+
+
+pip install msgpack-python
+
+pip install msgpack
+
+
+pip install pycuda
